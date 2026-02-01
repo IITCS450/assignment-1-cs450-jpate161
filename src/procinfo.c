@@ -96,15 +96,11 @@ int main(int c,char**v){
         }
         fclose(f);
     }
-
-    printf("Process state: %c\n", state);
-    printf("Parent PID: %ld\n", ppid);
-    printf("Command line: %s\n", (cmdline[0] ? cmdline : "<empty>"));
-    printf("CPU time (user+system): %.3f seconds\n", cpu_time);
-    if(vmrss_kb >= 0){
-        printf("Resident memory usage (VmRSS): %ld kB\n", vmrss_kb);
-    } else {
-        printf("Resident memory usage (VmRSS): unknown\n");
-    }
+    printf("PID:    %ld\n", pid);
+    printf("State:  %c\n", state);
+    printf("PPID:   %ld\n", ppid);
+    printf("Cmd:    %s\n", cmdline);
+    printf("CPU:    %.3f seconds\n", cpu_time);
+    printf("VmRSS:  %ld\n", vmrss_kb);
     return 0;
 }
